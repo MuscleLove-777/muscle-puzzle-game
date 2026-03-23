@@ -518,8 +518,8 @@
         if (combo >= 2) {
             const comboEl = document.createElement('div');
             comboEl.className = 'combo-text';
-            const comboLabels = ['', '', 'ダブル！', 'トリプル！', 'すごい！', 'マッスル！', '超マッスル！', '神マッスル！'];
-            comboEl.textContent = `${combo}コンボ！ ${comboLabels[Math.min(combo, 7)] || '💪MAX💪'}`;
+            const comboLabels = ['', '', 'ダブル！/ Double!', 'トリプル！/ Triple!', 'すごい！/ Amazing!', 'マッスル！/ Muscle!', '超マッスル！/ Super Muscle!', '神マッスル！/ God Muscle!'];
+            comboEl.textContent = `${combo}コンボ / Combo！ ${comboLabels[Math.min(combo, 7)] || '💪MAX💪'}`;
             comboEl.style.left = avgX + 'px';
             comboEl.style.top = (avgY - 30) + 'px';
             $particles.appendChild(comboEl);
@@ -648,6 +648,14 @@
     document.getElementById('retry-btn').addEventListener('click', startGame);
     document.getElementById('next-level-btn').addEventListener('click', nextLevel);
     document.getElementById('hint-btn').addEventListener('click', showHint);
+
+    // --- X/Twitter Share ---
+    document.getElementById('share-x-btn').addEventListener('click', () => {
+        const text = `マッスルパズルで遊んでるよ！💪 スコア: ${score.toLocaleString()} / レベル: ${level} #MuscleLove #筋肉パズル`;
+        const url = window.location.href;
+        const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        window.open(shareUrl, '_blank', 'noopener,noreferrer,width=550,height=420');
+    });
 
     // Prevent context menu on long press
     document.addEventListener('contextmenu', e => e.preventDefault());
