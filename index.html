@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>マッスルパズル - Muscle Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Title Screen -->
+    <div id="title-screen" class="screen active">
+        <div class="title-container">
+            <div class="title-emoji">💪🔥💪</div>
+            <h1 class="title-text">マッスル<br>パズル</h1>
+            <p class="title-sub">MUSCLE PUZZLE</p>
+            <div class="title-rules">
+                <p>隣り合うタイルを入れ替えて</p>
+                <p>同じタイルを3つ以上揃えよう！</p>
+            </div>
+            <button id="start-btn" class="btn-primary">スタート</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="game-header">
+            <div class="stat-box">
+                <span class="stat-label">レベル</span>
+                <span id="level" class="stat-value">1</span>
+            </div>
+            <div class="stat-box score-box">
+                <span class="stat-label">スコア</span>
+                <span id="score" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">コンボ</span>
+                <span id="combo" class="stat-value">0</span>
+            </div>
+        </div>
+        <div class="level-progress">
+            <div id="progress-bar" class="progress-fill"></div>
+            <span id="progress-text" class="progress-text">0 / 1000</span>
+        </div>
+        <div id="board-container" class="board-container">
+            <div id="board" class="board"></div>
+            <div id="particles" class="particles"></div>
+        </div>
+        <div class="game-footer">
+            <button id="hint-btn" class="btn-secondary">ヒント 💡</button>
+        </div>
+    </div>
+
+    <!-- Level Clear Screen -->
+    <div id="level-clear-screen" class="screen">
+        <div class="popup-container">
+            <div class="popup-emoji">🎉💪🎉</div>
+            <h2 class="popup-title">レベルクリア！</h2>
+            <p class="popup-score">スコア: <span id="clear-score">0</span></p>
+            <p class="popup-detail">最大コンボ: <span id="clear-combo">0</span></p>
+            <button id="next-level-btn" class="btn-primary">次のレベルへ</button>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen">
+        <div class="popup-container">
+            <div class="popup-emoji">😤💪😤</div>
+            <h2 class="popup-title">ゲームオーバー</h2>
+            <p class="popup-msg">動かせるタイルがない！</p>
+            <p class="popup-score">最終スコア: <span id="final-score">0</span></p>
+            <p class="popup-detail">到達レベル: <span id="final-level">1</span></p>
+            <p class="popup-detail">最大コンボ: <span id="final-combo">0</span></p>
+            <button id="retry-btn" class="btn-primary">もう一回</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
